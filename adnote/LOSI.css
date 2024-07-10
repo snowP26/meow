@@ -1,0 +1,179 @@
+/* signup.css */
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.logo img {
+    width: 150px; 
+    height: auto; 
+}
+
+body, form {
+    margin: 0;
+    padding: 0;
+    position: relative; 
+}
+
+/* Container */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #EED8AF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form fields */
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 11px;
+    color: #fff;
+}
+
+/* Style for the "Sign Up" word */
+.signup-title {
+    font-size: 32px; 
+    color: #fff; 
+    margin-bottom: 20px; 
+}
+
+
+/* Style for the "Login" word */
+.login-title {
+    font-size: 32px; 
+    color: #fff; 
+    margin-bottom: 20px; 
+}
+
+/* Style for the container of name inputs */
+.name-inputs {
+    display: flex; 
+    justify-content: space-between; 
+}
+
+/* Style for each name input container */
+.name-inputs > div {
+    flex: 1; 
+    margin-right: 10px; 
+}
+
+/* Style for input fields */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: calc(100% - 22px); 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+/* Sign Up button */
+.login-button {
+    width: 120px;
+    padding: 10px;
+    background-color: #6bff72;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute; 
+    bottom: 30px;
+    right: 20px;
+    text-decoration: none;
+    right: 60px;
+}
+
+.login-button:hover {
+    background-color: #ffffff;
+    color: #6C8BDB;
+    font-weight: bold;
+}
+
+
+.signup-link .text {
+    color: white;
+}
+.signup-link .link {
+    color: #6bff72;
+    text-decoration: none;
+}
+.signup-link .link:hover {
+    text-decoration: underline;
+}
+
+.swal-title {
+    max-width: 478px !important;
+    padding: 0px !important;
+  }
+
+.swal-button-container{
+    max-width: 478px;
+    
+}
+
+.swal-footer{
+    max-width: 478px;   
+}
+
+.swal-button {
+    margin-right: 10%;
+}
+
+.swal-overlay {
+    overflow-y: visible;
+    background-color: rgba(0,0,0,0);
+}
+
+.swal-icon--error__line--right {
+    margin-right: 92%;
+}
+
+/* Sign Up button */
+.signup-button {
+    width: 120px;
+    padding: 10px;
+    background-color: #6bff72;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute; 
+    bottom: 20px;
+    right: 20px;
+    text-decoration: none;
+}
+
+.signup-button:hover {
+    background-color: #ffffff;
+    color: #6C8BDB;
+    font-weight: bold;
+}
+
+a.login-link{
+    color: white;
+}
+
+a.link{
+    color: #6bff72;
+    text-decoration: none;
+}
+
+a.link:hover {
+    text-decoration: underline;
+}
+
+swal-modal {
+    position: absolute;
+    max-width: 478px;
+    
+}

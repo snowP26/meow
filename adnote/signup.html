@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="LOSI.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="module" src="losi.js" defer></script>
+</head>
+
+<style>
+    form {
+        background-color: #6C8BDB;
+        border-radius: 50px;
+        margin-bottom: 100px;
+        margin-top: 120px;
+        width: 100%;
+        max-width: 500px;
+        height: 500px;
+        padding: 40px;
+    }
+
+    div {
+        margin-bottom: 15px;
+    }
+</style>
+
+<body>
+    <div class="logo">
+        <img src="/assets/logo.png" alt="Logo">
+    </div>
+
+    <form method="post">
+        <h1 class="signup-title">Sign Up</h1>
+        <hr width="100%" size="2">
+
+        <div class="name-inputs">
+            <div>
+                <label for="id_first_name">First Name:</label>
+                <input type="text" name="first_name" id="id_first_name" required>
+            </div>
+            <div>
+                <label for="id_last_name">Last Name:</label>
+                <input type="text" name="last_name" id="id_last_name" required>
+            </div>
+        </div>
+        <!-- Email Address -->
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" name="username" id="email" required>
+        </div>
+        <!-- Password -->
+        <div class="pass">
+            <label for="id_password1">Password:</label>
+            <input id="pass" type="password" name="pass" required>
+            <label for="password">Confirm Password:</label>
+            <input id="confirm_pass" type="password" name="confirm_pass" required onkeyup="validate_password()">
+        </div>
+        <span id="wrong_pass_alert"></span>
+        <br />
+        <a class="login-link">
+            Already have an account?
+            <a href="index.html" class="link" id="login">
+                Login here
+            </a>
+        </a>
+        <div class="buttons">
+            <button id="signin" class="signup-button" onclick="wrong_pass_alert()" >
+                Submit
+            </button>
+        </div>
+        </div>
+        <script>
+            function validate_password() {
+                let pass = document.getElementById('pass').value;
+                let confirm_pass = document.getElementById('confirm_pass').value;
+                if (pass != confirm_pass) {
+                    document.getElementById('wrong_pass_alert').style.color = 'red';
+                    document.getElementById('wrong_pass_alert').innerHTML = '☒ Password do not match!';
+                    document.getElementById('signin').disabled = true;
+                    document.getElementById('signin').style.opacity = 0.4;
+                } else {
+                    document.getElementById('wrong_pass_alert').style.color = 'green';
+                    document.getElementById('wrong_pass_alert').innerHTML = '🗹 Password Matched';
+                    document.getElementById('signin').disabled = false;
+                    document.getElementById('signin').style.opacity = 1;
+                }
+            }
+
+            document.getElementById('signin').addEventListener('signin', function (event) {
+                event.preventDefault();
+                wrong_pass_alert();
+            });
+
+            function wrong_pass_alert() {
+                let first_name = document.getElementById('id_first_name').value;
+                let last_name = document.getElementById('id_last_name').value;
+                let email = document.getElementById('email').value;
+                let pass = document.getElementById('pass').value;
+                let confirm_pass = document.getElementById('confirm_pass').value;
+
+                if (first_name === "" || last_name === "" || email === "" || pass === "" || confirm_pass === "") {
+                    swal("Error", "Please fill all the fields.", "error");
+                } else if (pass !== confirm_pass) {
+                    swal("Error", "Passwords do not match.", "error");
+                } else {
+                    swal({
+                        title: "Sign up successful!",
+                        text: "You may now log in",
+                        icon: "success",
+                        button: "Log in",
+                    }).then(() => {
+                        document.getElementById('signin').submit();
+                    });
+                }
+            }
+        </script>
+
+</body>
+
+</html>
